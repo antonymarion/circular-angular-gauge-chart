@@ -1,0 +1,39 @@
+{
+  "name": "angular-gauge-chart",
+  "version": "0.7.2",
+  "peerDependencies": {
+    "@angular/common": "^8.0.0",
+    "@angular/core": "^8.0.0"
+  },
+  "dependencies": {
+    "gauge-chart": "^0.5.1",
+    "tslib": "^1.9.0"
+  },
+  "lint-staged": {
+    "*.{js,json,css}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.ts": [
+      "prettier --write",
+      "tslint --fix -c ./tslint.json 'src/**/*.ts'",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.13.6",
+    "tslint": "^5.10.0"
+  },
+  "main": "bundles/angular-gauge-chart.umd.js",
+  "module": "fesm5/angular-gauge-chart.js",
+  "es2015": "fesm2015/angular-gauge-chart.js",
+  "esm5": "esm5/angular-gauge-chart.js",
+  "esm2015": "esm2015/angular-gauge-chart.js",
+  "fesm5": "fesm5/angular-gauge-chart.js",
+  "fesm2015": "fesm2015/angular-gauge-chart.js",
+  "typings": "angular-gauge-chart.d.ts",
+  "metadata": "angular-gauge-chart.metadata.json",
+  "sideEffects": false
+}
