@@ -15,7 +15,7 @@ import * as GaugeChart from 'gauge-chart'
  * GaugeChart Component
  */
 @Component({
-  selector: 'rg-gauge-chart',
+  selector: 'circular-gauge-chart',
   templateUrl: './gauge-chart.component.html',
   styleUrls: ['./gauge-chart.component.css'],
 })

@@ -7,14 +7,14 @@ import { Component, OnInit } from '@angular/core'
 @Component({
   selector: 'app-root',
   template: `
-    <rg-gauge-chart
+    <circular-gauge-chart
       [canvasWidth]="canvasWidth"
       [needleValue]="needleValue"
       [centralLabel]="centralLabel"
       [options]="options"
       [name]="name"
       [bottomLabel]="bottomLabel"
-    ></rg-gauge-chart>
+    ></circular-gauge-chart>
   `,
 })
 export class AppComponent implements OnInit {

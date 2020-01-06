@@ -21,7 +21,7 @@
 
 ## 0.5.0
 **Breaking Changes**:
-* The component was renamed: `<gauge-chart/>` -> `<rg-gauge-chart>`.
+* The component was renamed: `<gauge-chart/>` -> `<circular-gauge-chart>`.
 * The NPM name was changed: `@recogizer/angular-gauge-chart` -> `angular-gauge-chart`.
 
 **Other Changes**:
