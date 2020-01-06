@@ -119,7 +119,7 @@ var GaugeChartComponent = /** @class */ (function () {
     };
     GaugeChartComponent.decorators = [
         { type: Component, args: [{
-                    selector: 'rg-gauge-chart',
+                    selector: 'circular-gauge-chart',
                     template: "<div class=\"gauge-chart\" [style.width.px]=\"canvasWidth\">\n  <span\n    [style.font-size.px]=\"nameFont\"\n    [style.margin-bottom.px]=\"nameMargin\">\n    {{name}}\n  </span>\n  <div #gaugeArea></div>\n  <span\n    class=\"gauge-chart__label\"\n    [style.font-size.px]=\"bottomLabelFont\"\n    [style.margin-top.px]=\"bottomLabelMargin\">\n    {{bottomLabel}}\n  </span>\n</div>\n",
                     styles: ["*{font-family:Roboto,'Helvetica Neue',sans-serif}.gauge-chart{display:flex;flex-direction:column;text-align:center}.gauge-chart__label{font-weight:700}"]
                 }] }
