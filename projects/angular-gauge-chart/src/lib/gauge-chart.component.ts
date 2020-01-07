@@ -87,6 +87,7 @@ export class GaugeChartComponent implements OnInit, OnChanges, DoCheck {
     if (this.centralLabel == null) {
       this.centralLabel = ''
     }
+    this.canvasHeight += 10
     return true
   }
 
