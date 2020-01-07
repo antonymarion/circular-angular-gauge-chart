@@ -70,6 +70,7 @@
             if (this.centralLabel == null) {
                 this.centralLabel = '';
             }
+            this.canvasHeight += 10;
             return true;
         };
         /**
