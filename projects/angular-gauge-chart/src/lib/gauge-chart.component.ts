@@ -23,6 +23,7 @@ export class GaugeChartComponent implements OnInit, OnChanges, DoCheck {
   @ViewChild('gaugeArea', { static: true }) gaugeArea
 
   @Input() canvasWidth: number
+  @Input() canvasHeight: number
   @Input() needleValue: number
   @Input() centralLabel: string
   @Input() options
@@ -30,7 +31,9 @@ export class GaugeChartComponent implements OnInit, OnChanges, DoCheck {
   @Input() name?: string
   @Input() nameFont?: string
   @Input() bottomLabel?: string
+  @Input() customDisplayLabel?: string
   @Input() bottomLabelFont?: string
+  @Input() customBottomLabelMargin?: string
 
   public nameMargin: string
   public bottomLabelMargin: string
@@ -52,7 +55,14 @@ export class GaugeChartComponent implements OnInit, OnChanges, DoCheck {
       if (!this.bottomLabelFont) {
         this.bottomLabelFont = '' + Math.round(this.canvasWidth / 10)
       }
-      this.bottomLabelMargin = '-' + this.bottomLabelFont
+      if (!this.customBottomLabelMargin) {
+        this.bottomLabelMargin = '-' + this.bottomLabelFont
+      } else {
+        this.bottomLabelMargin = this.customBottomLabelMargin
+      }
+      if (!this.customDisplayLabel) {
+        this.customDisplayLabel = 'block'
+      }
     }
 
     if (this.optionsCheck()) {
@@ -64,6 +74,10 @@ export class GaugeChartComponent implements OnInit, OnChanges, DoCheck {
 
   optionsCheck() {
     if (this.canvasWidth == null) {
+      console.warn('gauge-chart warning: canvasWidth is not specified!')
+      return false
+    }
+    if (this.canvasHeight == null) {
       console.warn('gauge-chart warning: canvasWidth is not specified!')
       return false
     } else if (this.needleValue == null) {

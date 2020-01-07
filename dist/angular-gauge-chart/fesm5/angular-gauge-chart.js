@@ -29,7 +29,15 @@ var GaugeChartComponent = /** @class */ (function () {
             if (!this.bottomLabelFont) {
                 this.bottomLabelFont = '' + Math.round(this.canvasWidth / 10);
             }
-            this.bottomLabelMargin = '-' + this.bottomLabelFont;
+            if (!this.customBottomLabelMargin) {
+                this.bottomLabelMargin = '-' + this.bottomLabelFont;
+            }
+            else {
+                this.bottomLabelMargin = this.customBottomLabelMargin;
+            }
+            if (!this.customDisplayLabel) {
+                this.customDisplayLabel = 'block';
+            }
         }
         if (this.optionsCheck()) {
             this.element = this.gaugeArea.nativeElement;
@@ -45,6 +53,10 @@ var GaugeChartComponent = /** @class */ (function () {
      */
     function () {
         if (this.canvasWidth == null) {
+            console.warn('gauge-chart warning: canvasWidth is not specified!');
+            return false;
+        }
+        if (this.canvasHeight == null) {
             console.warn('gauge-chart warning: canvasWidth is not specified!');
             return false;
         }
@@ -120,13 +132,14 @@ var GaugeChartComponent = /** @class */ (function () {
     GaugeChartComponent.decorators = [
         { type: Component, args: [{
                     selector: 'circular-gauge-chart',
-                    template: "<div class=\"gauge-chart\" [style.width.px]=\"canvasWidth\">\n  <span\n    [style.font-size.px]=\"nameFont\"\n    [style.margin-bottom.px]=\"nameMargin\">\n    {{name}}\n  </span>\n  <div #gaugeArea></div>\n  <span\n    class=\"gauge-chart__label\"\n    [style.font-size.px]=\"bottomLabelFont\"\n    [style.margin-top.px]=\"bottomLabelMargin\">\n    {{bottomLabel}}\n  </span>\n</div>\n",
+                    template: "<div class=\"gauge-chart\"\n     [style.width.px]=\"canvasWidth\"\n     [style.height.px]=\"canvasHeight\"\n>\n  <span\n    [style.font-size.px]=\"nameFont\"\n    [style.margin-bottom.px]=\"nameMargin\">\n    {{name}}\n  </span>\n  <div #gaugeArea></div>\n  <span\n    class=\"gauge-chart__label\"\n    [style.display]=\"customDisplayLabel\"\n    [style.font-size.px]=\"bottomLabelFont\"\n    [style.margin-top.px]=\"bottomLabelMargin\">\n    {{bottomLabel}}\n  </span>\n</div>\n",
                     styles: ["*{font-family:Roboto,'Helvetica Neue',sans-serif}.gauge-chart{display:flex;flex-direction:column;text-align:center}.gauge-chart__label{font-weight:700}"]
                 }] }
     ];
     GaugeChartComponent.propDecorators = {
         gaugeArea: [{ type: ViewChild, args: ['gaugeArea', { static: true },] }],
         canvasWidth: [{ type: Input }],
+        canvasHeight: [{ type: Input }],
         needleValue: [{ type: Input }],
         centralLabel: [{ type: Input }],
         options: [{ type: Input }],
@@ -134,7 +147,9 @@ var GaugeChartComponent = /** @class */ (function () {
         name: [{ type: Input }],
         nameFont: [{ type: Input }],
         bottomLabel: [{ type: Input }],
-        bottomLabelFont: [{ type: Input }]
+        customDisplayLabel: [{ type: Input }],
+        bottomLabelFont: [{ type: Input }],
+        customBottomLabelMargin: [{ type: Input }]
     };
     return GaugeChartComponent;
 }());
@@ -143,6 +158,8 @@ if (false) {
     GaugeChartComponent.prototype.gaugeArea;
     /** @type {?} */
     GaugeChartComponent.prototype.canvasWidth;
+    /** @type {?} */
+    GaugeChartComponent.prototype.canvasHeight;
     /** @type {?} */
     GaugeChartComponent.prototype.needleValue;
     /** @type {?} */
@@ -158,7 +175,11 @@ if (false) {
     /** @type {?} */
     GaugeChartComponent.prototype.bottomLabel;
     /** @type {?} */
+    GaugeChartComponent.prototype.customDisplayLabel;
+    /** @type {?} */
     GaugeChartComponent.prototype.bottomLabelFont;
+    /** @type {?} */
+    GaugeChartComponent.prototype.customBottomLabelMargin;
     /** @type {?} */
     GaugeChartComponent.prototype.nameMargin;
     /** @type {?} */

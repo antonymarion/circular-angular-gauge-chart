@@ -8,6 +8,7 @@ import { OnChanges, OnInit, DoCheck } from '@angular/core';
 export declare class GaugeChartComponent implements OnInit, OnChanges, DoCheck {
     gaugeArea: any;
     canvasWidth: number;
+    canvasHeight: number;
     needleValue: number;
     centralLabel: string;
     options: any;
@@ -15,7 +16,9 @@ export declare class GaugeChartComponent implements OnInit, OnChanges, DoCheck {
     name?: string;
     nameFont?: string;
     bottomLabel?: string;
+    customDisplayLabel?: string;
     bottomLabelFont?: string;
+    customBottomLabelMargin?: string;
     nameMargin: string;
     bottomLabelMargin: string;
     private element;

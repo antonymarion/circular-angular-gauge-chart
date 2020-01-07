@@ -32,7 +32,15 @@
                 if (!this.bottomLabelFont) {
                     this.bottomLabelFont = '' + Math.round(this.canvasWidth / 10);
                 }
-                this.bottomLabelMargin = '-' + this.bottomLabelFont;
+                if (!this.customBottomLabelMargin) {
+                    this.bottomLabelMargin = '-' + this.bottomLabelFont;
+                }
+                else {
+                    this.bottomLabelMargin = this.customBottomLabelMargin;
+                }
+                if (!this.customDisplayLabel) {
+                    this.customDisplayLabel = 'block';
+                }
             }
             if (this.optionsCheck()) {
                 this.element = this.gaugeArea.nativeElement;
@@ -48,6 +56,10 @@
          */
         function () {
             if (this.canvasWidth == null) {
+                console.warn('gauge-chart warning: canvasWidth is not specified!');
+                return false;
+            }
+            if (this.canvasHeight == null) {
                 console.warn('gauge-chart warning: canvasWidth is not specified!');
                 return false;
             }
@@ -123,13 +135,14 @@
         GaugeChartComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'circular-gauge-chart',
-                        template: "<div class=\"gauge-chart\" [style.width.px]=\"canvasWidth\">\n  <span\n    [style.font-size.px]=\"nameFont\"\n    [style.margin-bottom.px]=\"nameMargin\">\n    {{name}}\n  </span>\n  <div #gaugeArea></div>\n  <span\n    class=\"gauge-chart__label\"\n    [style.font-size.px]=\"bottomLabelFont\"\n    [style.margin-top.px]=\"bottomLabelMargin\">\n    {{bottomLabel}}\n  </span>\n</div>\n",
+                        template: "<div class=\"gauge-chart\"\n     [style.width.px]=\"canvasWidth\"\n     [style.height.px]=\"canvasHeight\"\n>\n  <span\n    [style.font-size.px]=\"nameFont\"\n    [style.margin-bottom.px]=\"nameMargin\">\n    {{name}}\n  </span>\n  <div #gaugeArea></div>\n  <span\n    class=\"gauge-chart__label\"\n    [style.display]=\"customDisplayLabel\"\n    [style.font-size.px]=\"bottomLabelFont\"\n    [style.margin-top.px]=\"bottomLabelMargin\">\n    {{bottomLabel}}\n  </span>\n</div>\n",
                         styles: ["*{font-family:Roboto,'Helvetica Neue',sans-serif}.gauge-chart{display:flex;flex-direction:column;text-align:center}.gauge-chart__label{font-weight:700}"]
                     }] }
         ];
         GaugeChartComponent.propDecorators = {
             gaugeArea: [{ type: core.ViewChild, args: ['gaugeArea', { static: true },] }],
             canvasWidth: [{ type: core.Input }],
+            canvasHeight: [{ type: core.Input }],
             needleValue: [{ type: core.Input }],
             centralLabel: [{ type: core.Input }],
             options: [{ type: core.Input }],
@@ -137,7 +150,9 @@
             name: [{ type: core.Input }],
             nameFont: [{ type: core.Input }],
             bottomLabel: [{ type: core.Input }],
-            bottomLabelFont: [{ type: core.Input }]
+            customDisplayLabel: [{ type: core.Input }],
+            bottomLabelFont: [{ type: core.Input }],
+            customBottomLabelMargin: [{ type: core.Input }]
         };
         return GaugeChartComponent;
     }());
@@ -146,6 +161,8 @@
         GaugeChartComponent.prototype.gaugeArea;
         /** @type {?} */
         GaugeChartComponent.prototype.canvasWidth;
+        /** @type {?} */
+        GaugeChartComponent.prototype.canvasHeight;
         /** @type {?} */
         GaugeChartComponent.prototype.needleValue;
         /** @type {?} */
@@ -161,7 +178,11 @@
         /** @type {?} */
         GaugeChartComponent.prototype.bottomLabel;
         /** @type {?} */
+        GaugeChartComponent.prototype.customDisplayLabel;
+        /** @type {?} */
         GaugeChartComponent.prototype.bottomLabelFont;
+        /** @type {?} */
+        GaugeChartComponent.prototype.customBottomLabelMargin;
         /** @type {?} */
         GaugeChartComponent.prototype.nameMargin;
         /** @type {?} */
