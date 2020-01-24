@@ -180,9 +180,9 @@ if (false) {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-class GaugeChartModule {
+class CircularGaugeChartModule {
 }
-GaugeChartModule.decorators = [
+CircularGaugeChartModule.decorators = [
     { type: NgModule, args: [{
                 imports: [],
                 declarations: [GaugeChartComponent],
@@ -200,5 +200,5 @@ GaugeChartModule.decorators = [
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { GaugeChartComponent, GaugeChartModule };
+export { CircularGaugeChartModule, GaugeChartComponent };
 //# sourceMappingURL=angular-gauge-chart.js.map

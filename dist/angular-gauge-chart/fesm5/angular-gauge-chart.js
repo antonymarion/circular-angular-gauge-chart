@@ -206,17 +206,17 @@ if (false) {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-var GaugeChartModule = /** @class */ (function () {
-    function GaugeChartModule() {
+var CircularGaugeChartModule = /** @class */ (function () {
+    function CircularGaugeChartModule() {
     }
-    GaugeChartModule.decorators = [
+    CircularGaugeChartModule.decorators = [
         { type: NgModule, args: [{
                     imports: [],
                     declarations: [GaugeChartComponent],
                     exports: [GaugeChartComponent],
                 },] }
     ];
-    return GaugeChartModule;
+    return CircularGaugeChartModule;
 }());
 
 /**
@@ -229,5 +229,5 @@ var GaugeChartModule = /** @class */ (function () {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { GaugeChartComponent, GaugeChartModule };
+export { CircularGaugeChartModule, GaugeChartComponent };
 //# sourceMappingURL=angular-gauge-chart.js.map

@@ -209,21 +209,21 @@
      * @fileoverview added by tsickle
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
-    var GaugeChartModule = /** @class */ (function () {
-        function GaugeChartModule() {
+    var CircularGaugeChartModule = /** @class */ (function () {
+        function CircularGaugeChartModule() {
         }
-        GaugeChartModule.decorators = [
+        CircularGaugeChartModule.decorators = [
             { type: core.NgModule, args: [{
                         imports: [],
                         declarations: [GaugeChartComponent],
                         exports: [GaugeChartComponent],
                     },] }
         ];
-        return GaugeChartModule;
+        return CircularGaugeChartModule;
     }());
 
+    exports.CircularGaugeChartModule = CircularGaugeChartModule;
     exports.GaugeChartComponent = GaugeChartComponent;
-    exports.GaugeChartModule = GaugeChartModule;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 

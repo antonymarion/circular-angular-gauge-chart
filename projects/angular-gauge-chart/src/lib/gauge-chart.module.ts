@@ -6,4 +6,4 @@ import { GaugeChartComponent } from './gauge-chart.component'
   declarations: [GaugeChartComponent],
   exports: [GaugeChartComponent],
 })
-export class GaugeChartModule {}
+export class CircularGaugeChartModule {}

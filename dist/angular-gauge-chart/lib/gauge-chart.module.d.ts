@@ -1,2 +1,2 @@
-export declare class GaugeChartModule {
+export declare class CircularGaugeChartModule {
 }

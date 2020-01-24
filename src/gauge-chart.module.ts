@@ -26,4 +26,4 @@ import { GaugeChartComponent } from './gauge-chart'
     ENV_PROVIDERS,
   ]*/
 })
-export class GaugeChartModule {}
+export class CircularGaugeChartModule {}
