@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/test-proj",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -24,6 +25,12 @@
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -119,7 +126,8 @@
           },
           "configurations": {
             "production": {
-              "project": "projects/angular-gauge-chart/ng-package.prod.json"
+              "project": "projects/angular-gauge-chart/ng-package.prod.json",
+              "tsConfig": "projects/angular-gauge-chart/tsconfig.lib.prod.json"
             }
           }
         },
@@ -144,5 +152,8 @@
       }
     }
   },
-  "defaultProject": "test-proj"
+  "defaultProject": "test-proj",
+  "cli": {
+    "analytics": "2333a832-efd1-4d00-a6f8-e084f0b1daff"
+  }
 }

@@ -1,10 +1,6 @@
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
 /*
  * Public API Surface of gauge-chart
  */
-export { GaugeChartComponent } from './lib/gauge-chart.component';
-export { CircularGaugeChartModule } from './lib/gauge-chart.module';
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljX2FwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL2FuZ3VsYXItZ2F1Z2UtY2hhcnQvIiwic291cmNlcyI6WyJwdWJsaWNfYXBpLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFJQSxvQ0FBYyw2QkFBNkIsQ0FBQTtBQUMzQyx5Q0FBYywwQkFBMEIsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbIi8qXG4gKiBQdWJsaWMgQVBJIFN1cmZhY2Ugb2YgZ2F1Z2UtY2hhcnRcbiAqL1xuXG5leHBvcnQgKiBmcm9tICcuL2xpYi9nYXVnZS1jaGFydC5jb21wb25lbnQnXG5leHBvcnQgKiBmcm9tICcuL2xpYi9nYXVnZS1jaGFydC5tb2R1bGUnXG4iXX0=
+export * from './lib/gauge-chart.component';
+export * from './lib/gauge-chart.module';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljX2FwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL2FuZ3VsYXItZ2F1Z2UtY2hhcnQvIiwic291cmNlcyI6WyJwdWJsaWNfYXBpLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOztHQUVHO0FBRUgsY0FBYyw2QkFBNkIsQ0FBQTtBQUMzQyxjQUFjLDBCQUEwQixDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiLypcbiAqIFB1YmxpYyBBUEkgU3VyZmFjZSBvZiBnYXVnZS1jaGFydFxuICovXG5cbmV4cG9ydCAqIGZyb20gJy4vbGliL2dhdWdlLWNoYXJ0LmNvbXBvbmVudCdcbmV4cG9ydCAqIGZyb20gJy4vbGliL2dhdWdlLWNoYXJ0Lm1vZHVsZSdcbiJdfQ==
