@@ -103,7 +103,7 @@ export class GaugeChartComponent implements OnInit, OnChanges, DoCheck {
   }
 
   drawChart(redraw = false) {
-    if (redraw) {
+    if (redraw && !!this.gaugeChart) {
       this.gaugeChart.removeGauge()
     }
     this.options.centralLabel = this.centralLabel

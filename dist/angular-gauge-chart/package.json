@@ -3,11 +3,11 @@
   "version": "0.7.2",
   "peerDependencies": {
     "@angular/common": "^8.0.0",
-    "@angular/core": "^8.0.0"
+    "@angular/core": "^8.0.0",
+    "tslib": "^1.10.0"
   },
   "dependencies": {
-    "gauge-chart": "^0.5.1",
-    "tslib": "^1.9.0"
+    "gauge-chart": "^0.5.1"
   },
   "lint-staged": {
     "*.{js,json,css}": [
@@ -20,12 +20,6 @@
       "git add"
     ]
   },
-  "devDependencies": {
-    "husky": "^0.14.3",
-    "lint-staged": "^7.2.0",
-    "prettier": "^1.13.6",
-    "tslint": "^5.10.0"
-  },
   "main": "bundles/angular-gauge-chart.umd.js",
   "module": "fesm5/angular-gauge-chart.js",
   "es2015": "fesm2015/angular-gauge-chart.js",
@@ -34,6 +28,8 @@
   "fesm5": "fesm5/angular-gauge-chart.js",
   "fesm2015": "fesm2015/angular-gauge-chart.js",
   "typings": "angular-gauge-chart.d.ts",
-  "metadata": "angular-gauge-chart.metadata.json",
-  "sideEffects": false
+  "sideEffects": false,
+  "scripts": {
+    "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled by Ivy. This is not allowed.\\nPlease delete and rebuild the package, without compiling with Ivy, before attempting to publish.\\n')\" && exit 1"
+  }
 }
