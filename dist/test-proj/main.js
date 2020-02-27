@@ -84,7 +84,7 @@ var GaugeChartComponent = /** @class */ (function () {
     };
     GaugeChartComponent.prototype.drawChart = function (redraw) {
         if (redraw === void 0) { redraw = false; }
-        if (redraw) {
+        if (redraw && !!this.gaugeChart) {
             this.gaugeChart.removeGauge();
         }
         this.options.centralLabel = this.centralLabel;
@@ -421,7 +421,7 @@ _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["platformBrowser"]().boot
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\projets\angular-circular-gauge\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\projets\angular-circular-gauge\src\main.ts */"./src/main.ts");
 
 
 /***/ })
