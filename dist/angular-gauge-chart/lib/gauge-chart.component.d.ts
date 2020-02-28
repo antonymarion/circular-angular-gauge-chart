@@ -10,6 +10,7 @@ export declare class GaugeChartComponent implements OnInit, OnChanges, DoCheck {
     canvasWidth: number;
     canvasHeight: number;
     needleValue: number;
+    totalValue: number;
     centralLabel: string;
     options: any;
     wrapOptions?: any;

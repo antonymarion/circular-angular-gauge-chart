@@ -73,6 +73,10 @@ let GaugeChartComponent = class GaugeChartComponent {
     ngOnChanges(changes) {
         if (changes.needleValue && !changes.needleValue.firstChange) {
             this.needleValue = changes.needleValue.currentValue;
+            this.gaugeChart.removeGauge();
+            this.centralLabel = this.options.bottomLabel = this.options.centralLabel = '' + this.needleValue + '/' + this.totalValue;
+            this.gaugeChart = gaugeChart(this.element, this.canvasWidth, this.options);
+            this.options.arcDelimiters[0] = Math.floor(100 * this.needleValue / this.totalValue);
             this.gaugeChart.updateNeedle(this.needleValue);
         }
         if (changes.centralLabel && !changes.centralLabel.firstChange) {
@@ -97,6 +101,10 @@ __decorate([
     Input(),
     __metadata("design:type", Number)
 ], GaugeChartComponent.prototype, "needleValue", void 0);
+__decorate([
+    Input(),
+    __metadata("design:type", Number)
+], GaugeChartComponent.prototype, "totalValue", void 0);
 __decorate([
     Input(),
     __metadata("design:type", String)
