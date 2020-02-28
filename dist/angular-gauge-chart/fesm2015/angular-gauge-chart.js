@@ -62,8 +62,8 @@ let GaugeChartComponent = class GaugeChartComponent {
     areEqual(obj1, obj2) {
         return JSON.stringify(obj1) === JSON.stringify(obj2);
     }
-    drawChart(redraw = false) {
-        if (redraw && !!this.gaugeChart) {
+    drawChart(redraw = true) {
+        if (redraw) {
             this.gaugeChart.removeGauge();
         }
         this.options.centralLabel = this.centralLabel;

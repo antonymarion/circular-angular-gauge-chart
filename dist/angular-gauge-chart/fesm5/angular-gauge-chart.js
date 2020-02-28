@@ -65,8 +65,8 @@ var GaugeChartComponent = /** @class */ (function () {
         return JSON.stringify(obj1) === JSON.stringify(obj2);
     };
     GaugeChartComponent.prototype.drawChart = function (redraw) {
-        if (redraw === void 0) { redraw = false; }
-        if (redraw && !!this.gaugeChart) {
+        if (redraw === void 0) { redraw = true; }
+        if (redraw) {
             this.gaugeChart.removeGauge();
         }
         this.options.centralLabel = this.centralLabel;
