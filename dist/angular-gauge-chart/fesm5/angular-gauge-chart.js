@@ -66,7 +66,7 @@ var GaugeChartComponent = /** @class */ (function () {
     };
     GaugeChartComponent.prototype.drawChart = function (redraw) {
         if (redraw === void 0) { redraw = true; }
-        if (redraw) {
+        if (redraw && this.gaugeChart) {
             this.gaugeChart.removeGauge();
         }
         this.options.centralLabel = this.centralLabel;

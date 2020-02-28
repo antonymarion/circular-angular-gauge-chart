@@ -63,7 +63,7 @@ let GaugeChartComponent = class GaugeChartComponent {
         return JSON.stringify(obj1) === JSON.stringify(obj2);
     }
     drawChart(redraw = true) {
-        if (redraw) {
+        if (redraw && this.gaugeChart) {
             this.gaugeChart.removeGauge();
         }
         this.options.centralLabel = this.centralLabel;
