@@ -25,6 +25,7 @@ export class GaugeChartComponent implements OnInit, OnChanges, DoCheck {
   @Input() canvasWidth: number
   @Input() canvasHeight: number
   @Input() needleValue: number
+  @Input() totalValue: number
   @Input() centralLabel: string
   @Input() options
   @Input() wrapOptions?
