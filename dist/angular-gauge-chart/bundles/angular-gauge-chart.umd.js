@@ -279,7 +279,8 @@
                 this.bottomLabel = this.centralLabel = this.options.bottomLabel
                     = this.options.centralLabel = '' + this.needleValue + '/' + this.totalValue;
                 this.gaugeChart = gaugeChart.gaugeChart(this.element, this.canvasWidth, this.options);
-                this.options.arcDelimiters[0] = Math.floor(100 * this.needleValue / this.totalValue);
+                var arcDelimiterValue = Math.floor(100 * this.needleValue / this.totalValue);
+                this.options.arcDelimiters[0] = arcDelimiterValue === 100 ? 99 : arcDelimiterValue;
                 this.gaugeChart.updateNeedle(this.needleValue);
             }
             if (changes.centralLabel && !changes.centralLabel.firstChange) {

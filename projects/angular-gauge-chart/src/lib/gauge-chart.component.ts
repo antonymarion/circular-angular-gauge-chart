@@ -103,8 +103,8 @@ export class GaugeChartComponent implements OnInit, OnChanges, DoCheck {
     return JSON.stringify(obj1) === JSON.stringify(obj2)
   }
 
-  drawChart(redraw = false) {
-    if (redraw && !!this.gaugeChart) {
+  drawChart(redraw = true) {
+    if (redraw && this.gaugeChart) {
       this.gaugeChart.removeGauge()
     }
     this.options.centralLabel = this.centralLabel
@@ -119,6 +119,21 @@ export class GaugeChartComponent implements OnInit, OnChanges, DoCheck {
   ngOnChanges(changes) {
     if (changes.needleValue && !changes.needleValue.firstChange) {
       this.needleValue = changes.needleValue.currentValue
+
+      this.gaugeChart.removeGauge()
+      this.bottomLabel = this.centralLabel = this.options.bottomLabel = this.options.centralLabel =
+        '' + this.needleValue + '/' + this.totalValue
+      this.gaugeChart = GaugeChart.gaugeChart(
+        this.element,
+        this.canvasWidth,
+        this.options,
+      )
+
+      const arcDelimiterValue = Math.floor(
+        (100 * this.needleValue) / this.totalValue,
+      )
+      this.options.arcDelimiters[0] =
+        arcDelimiterValue === 100 ? 99 : arcDelimiterValue
       this.gaugeChart.updateNeedle(this.needleValue)
     }
     if (changes.centralLabel && !changes.centralLabel.firstChange) {

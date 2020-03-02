@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.canvasWidth = 300
     this.needleValue = 65
-    // this.centralLabel = '' + this.needleValue
+    this.centralLabel = '' + this.needleValue
     this.options = {
       hasNeedle: true,
       outerNeedle: false,
