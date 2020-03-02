@@ -92,6 +92,8 @@ export class GaugeChartComponent implements OnInit, OnChanges {
         this.options.arcDelimiters[0] = Math.floor(
           (100 * this.needleValue) / this.totalValue,
         )
+        this.options.arcDelimiters[0] < 1 ? this.options.arcDelimiters[0] = 1 : "";
+        this.options.arcDelimiters[0] > 99 ? this.options.arcDelimiters[0] = 99 : "";
         this.gaugeChart.updateNeedle(this.needleValue)
       }
     }

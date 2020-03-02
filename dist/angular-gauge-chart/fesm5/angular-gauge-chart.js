@@ -70,6 +70,8 @@ var GaugeChartComponent = /** @class */ (function () {
             this.gaugeChart.removeGauge();
         }
         this.options.centralLabel = this.centralLabel;
+        this.options.arcDelimiters[0] > 99 ? this.options.arcDelimiters[0] = 99 : '';
+        this.options.arcDelimiters[0] < 1 ? this.options.arcDelimiters[0] = 1 : '';
         this.gaugeChart = gaugeChart(this.element, this.canvasWidth, this.options);
         this.gaugeChart.updateNeedle(this.needleValue);
     };
@@ -77,11 +79,13 @@ var GaugeChartComponent = /** @class */ (function () {
         if (changes.needleValue && !changes.needleValue.firstChange) {
             this.needleValue = changes.needleValue.currentValue;
             this.gaugeChart.removeGauge();
-            this.bottomLabel = this.centralLabel = this.options.bottomLabel
-                = this.options.centralLabel = '' + this.needleValue + '/' + this.totalValue;
+            this.bottomLabel = this.centralLabel = this.options.bottomLabel = this.options.centralLabel =
+                '' + this.needleValue + '/' + this.totalValue;
             this.gaugeChart = gaugeChart(this.element, this.canvasWidth, this.options);
-            var arcDelimiterValue = Math.floor(100 * this.needleValue / this.totalValue);
-            this.options.arcDelimiters[0] = arcDelimiterValue === 100 ? 99 : arcDelimiterValue;
+            var arcDelimiterValue = Math.floor((100 * this.needleValue) / this.totalValue);
+            this.options.arcDelimiters[0] =
+                arcDelimiterValue > 100 ? 99 : arcDelimiterValue;
+            this.options.arcDelimiters[0] < 1 ? this.options.arcDelimiters[0] = 1 : '';
             this.gaugeChart.updateNeedle(this.needleValue);
         }
         if (changes.centralLabel && !changes.centralLabel.firstChange) {

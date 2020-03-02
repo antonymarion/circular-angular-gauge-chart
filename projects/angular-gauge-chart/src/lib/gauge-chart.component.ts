@@ -108,6 +108,8 @@ export class GaugeChartComponent implements OnInit, OnChanges, DoCheck {
       this.gaugeChart.removeGauge()
     }
     this.options.centralLabel = this.centralLabel
+    this.options.arcDelimiters[0] > 99 ? this.options.arcDelimiters[0] = 99 : ''
+    this.options.arcDelimiters[0] < 1 ? this.options.arcDelimiters[0] = 1 : ''
     this.gaugeChart = GaugeChart.gaugeChart(
       this.element,
       this.canvasWidth,
@@ -133,7 +135,9 @@ export class GaugeChartComponent implements OnInit, OnChanges, DoCheck {
         (100 * this.needleValue) / this.totalValue,
       )
       this.options.arcDelimiters[0] =
-        arcDelimiterValue === 100 ? 99 : arcDelimiterValue
+        arcDelimiterValue > 100 ? 99 : arcDelimiterValue
+      this.options.arcDelimiters[0] < 1 ? this.options.arcDelimiters[0] = 1 : ''
+
       this.gaugeChart.updateNeedle(this.needleValue)
     }
     if (changes.centralLabel && !changes.centralLabel.firstChange) {
