@@ -112,6 +112,13 @@ export class GaugeChartComponent implements OnInit, OnChanges, DoCheck {
       this.canvasWidth,
       this.options,
     )
+    if (this.needleValue===100){
+      this.needleValue = 99;
+    }
+    
+    if (this.needleValue===0){
+      this.needleValue = 1;
+    }
     this.gaugeChart.updateNeedle(this.needleValue)
   }
 
